@@ -12,8 +12,8 @@ import json
 class DeleteAdminSupportAPI(ResourceBase):
     decorators = [auth.login_required]
 
-    def init(self):
-        super(DeleteAdminSupportAPI, self).init()
+    def _init_(self):
+        super(DeleteAdminSupportAPI, self).init_()
 
     def get(self, id):
         try:
