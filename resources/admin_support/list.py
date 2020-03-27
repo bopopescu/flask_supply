@@ -10,11 +10,11 @@ from flask import jsonify
 import json
 
 
-class AdminSupportAPI(ResourceBase):
+class ListAdminSupportAPI(ResourceBase):
     decorators = [auth.login_required]
 
     def _init_(self):
-        super(AdminSupportAPI, self)._init_()
+        super(ListAdminSupportAPI, self)._init_()
 
     def get(self):
         try:
