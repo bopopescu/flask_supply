@@ -15,7 +15,7 @@ class ListEmployeeInChargeAPI(ResourceBase):
     decorators = [auth.login_required]
 
     def _init_(self):
-        super(ListEmployeeInChargeAPI, self)._init_()
+        super(ListEmployeeInChargeAPI, self).init()
 
     def get(self):
         try:

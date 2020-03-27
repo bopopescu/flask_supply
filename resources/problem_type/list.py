@@ -14,7 +14,7 @@ class ListProblemTypeAPI(ResourceBase):
     decorators = [auth.login_required]
 
     def _init_(self):
-        super(ListProblemTypeAPI, self)._init_()
+        super(ListProblemTypeAPI, self).init()
 
     def get(self):
         try:

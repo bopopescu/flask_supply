@@ -13,7 +13,7 @@ class ListAdminSupportAPI(ResourceBase):
     decorators = [auth.login_required]
 
     def _init_(self):
-        super(ListAdminSupportAPI, self)._init_()
+        super(ListAdminSupportAPI, self).init()
 
     def get(self):
         try:

@@ -13,7 +13,7 @@ class DeleteRequestAPI(ResourceBase):
     decorators = [auth.login_required]
 
     def _init_(self):
-        super(DeleteRequestAPI, self)._init_()
+        super(DeleteRequestAPI, self).init()
 
     def get(self, id):
         try:
