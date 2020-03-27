@@ -18,7 +18,7 @@ class ListDepartmentAPI(ResourceBase):
     def get(self):
         try:
             bridge = DepartmentAdapter()
-            # access = Department(bridge)
+           # access = Department(bridge)
             return jsonify(bridge.list())
 
         except Exception as e:
