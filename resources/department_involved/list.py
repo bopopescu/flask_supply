@@ -4,7 +4,7 @@ from flask import request
 from common.auth import auth
 from resources.resource_base import ResourceBase
 from TechTeam.adapter.department_involved import DepartmentInvolvedAdapter
-from supply_core.use_cases.department import DepartmentInvolved
+from supply_core.use_cases.departments_involved import DepartmentsInvolved
 from flask import jsonify
 import json
 

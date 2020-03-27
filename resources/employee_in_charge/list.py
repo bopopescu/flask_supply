@@ -4,7 +4,9 @@ from flask import request
 from common.auth import auth
 from resources.resource_base import ResourceBase
 from TechTeam.adapter.employee_in_charge import EmployeeInChargeAdapter
-from supply_core.use_cases.department import EmployeeInCharge
+
+from supply_core.use_cases.employee_in_charge import EmployeeInCharge
+
 from flask import jsonify
 import json
 
