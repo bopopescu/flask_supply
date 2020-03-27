@@ -3,23 +3,22 @@ from flask import make_response
 from flask import request
 from common.auth import auth
 from resources.resource_base import ResourceBase
-from TechTeam.adapter.admin_support import AdminSupportAdapter
-from supply_core.use_cases.admin_support import AdminSupport
-
+from TechTeam.adapter.department_country_support import DepartmentCountrySupportAdapter
+from supply_core.use_cases.department import DepartmentCountrySupport
 from flask import jsonify
 import json
 
 
-class AdminSupportAPI(ResourceBase):
+class ListDepartmentCountrySupportAPI(ResourceBase):
     decorators = [auth.login_required]
 
     def _init_(self):
-        super(AdminSupportAPI, self)._init_()
+        super(ListDepartmentCountrySupportAPI, self)._init_()
 
     def get(self):
         try:
-            bridge = AdminSupportAdapter()
-            # access = AdminSupport(bridge)
+            bridge = DepartmentCountrySupportAdapter()
+            # access = Department(bridge)
             return jsonify(bridge.list())
 
         except Exception as e:

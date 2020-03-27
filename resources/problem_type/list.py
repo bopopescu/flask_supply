@@ -3,23 +3,22 @@ from flask import make_response
 from flask import request
 from common.auth import auth
 from resources.resource_base import ResourceBase
-from TechTeam.adapter.admin_support import AdminSupportAdapter
-from supply_core.use_cases.admin_support import AdminSupport
-
+from TechTeam.adapter.problem_type import ProblemTypeAdapter
+from supply_core.use_cases.department import ProblemType
 from flask import jsonify
 import json
 
 
-class AdminSupportAPI(ResourceBase):
+class ListProblemTypeAPI(ResourceBase):
     decorators = [auth.login_required]
 
     def _init_(self):
-        super(AdminSupportAPI, self)._init_()
+        super(ListProblemTypeAPI, self)._init_()
 
     def get(self):
         try:
-            bridge = AdminSupportAdapter()
-            # access = AdminSupport(bridge)
+            bridge = ProblemTypeAdapter()
+            # access = Department(bridge)
             return jsonify(bridge.list())
 
         except Exception as e:
