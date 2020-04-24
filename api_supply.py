@@ -2,27 +2,27 @@ from flask import Flask
 from flask_restful import Api
 from flask_cors import CORS
 from waitress import serve
-#Resources
+# Resources
 
-#Admin Support
+# Admin Support
 from resources.admin_support.list import ListAdminSupportAPI
 from resources.admin_support.delete import DeleteAdminSupportAPI
 from resources.admin_support.new import NewAdminSupportAPI
 from resources.admin_support.update import UpdateAdminSupportAPI
 
-#Department
+# Department
 from resources.department.list import ListDepartmentAPI
 from resources.department.delete import DeleteDepartmentAPI
 from resources.department.new import NewDepartmentAPI
 from resources.department.update import UpdateDepartmentAPI
 
-#Department Country Support
+# Department Country Support
 from resources.department_country_support.list import ListDepartmentCountrySupportAPI
 from resources.department_country_support.delete import DeleteDepartmentCountrySupportAPI
 from resources.department_country_support.new import NewDepartmentCountrySupportAPI
 from resources.department_country_support.update import UpdateDepartmentCountrySupportAPI
 
-#Department Involved
+# Department Involved
 from resources.department_involved.list import ListDepartmentInvolvedAPI
 from resources.department_involved.delete import DeleteDepartmentsInvolvedAPI
 from resources.department_involved.new import NewDepartmentInvolvedAPI
@@ -53,16 +53,16 @@ from resources.request_update.new import NewRequestUpdateAPI
 from resources.request_update.update import UpdateRequestUpdateAPI
 
 # Support Department
-from resources.request_update.list import ListSupportDepartmentAPI
-from resources.request_update.delete import DeleteSupportDepartmentAPI
-from resources.request_update.new import NewSupportDepartmentAPI
-from resources.request_update.update import UpdateSupportDepartmentAPI
+from resources.support_department.list import ListSupportDepartmentAPI
+from resources.support_department.delete import DeleteSupportDepartmentAPI
+from resources.support_department.new import NewSupportDepartmentAPI
+from resources.support_department.update import UpdateSupportDepartmentAPI
 
-#Users
-from resources.user.list import ListUsersAPI
-from resources.user.delete import DeleteUserAPI
-from resources.user.new import NewUserAPI
-from resources.user.update import UpdateUserAPI
+# Users
+from resources.users.list import ListUsersAPI
+from resources.users.delete import DeleteUserAPI
+from resources.users.new import NewUserAPI
+from resources.users.update import UpdateUserAPI
 
 app = Flask(__name__, static_url_path="")
 CORS(app)
@@ -70,8 +70,7 @@ app.debug = False
 
 api = Api(app)
 
-#################    Admin Support   ##########################
-
+#Admin Support
 api.add_resource(
     ListAdminSupportAPI,
     '/supply/api/v1.0/list_admin_support/',
@@ -79,7 +78,7 @@ api.add_resource(
 )
 
 api.add_resource(
-    DeleteDepartmentAPI,
+    DeleteAdminSupportAPI,
     '/supply/api/v1.0/delete_admin_support/<string:id>',
     endpoint='delete_admin_support'
 )
@@ -174,7 +173,7 @@ api.add_resource(
     endpoint='update_department_involved'
 )
 
-##################   Employee In Charge #########################3
+##################   Employee In Charge #########################
 api.add_resource(
     ListEmployeeInChargeAPI,
     '/supply/api/v1.0/list_employee_in_charge/',
@@ -244,7 +243,7 @@ api.add_resource(
 
 api.add_resource(
     UpdateRequestAPI,
-    '/supply/api/v1.0/update_request/',
+    '/supply/api/v1.0/update_request/<string:id>',
     endpoint='update_request'
 )
 
@@ -323,7 +322,6 @@ api.add_resource(
     '/supply/api/v1.0/update_user/<string:id>',
     endpoint='update_user'
 )
-
 
 if __name__ == "__main__":
     app.run(debug=False)

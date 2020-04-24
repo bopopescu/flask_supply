@@ -1,0 +1,9 @@
+vendor/supply_driver_mysql-0.1.tar.gz
+vendor/supply_core-0.1.tar.gz
+Flask
+Flask-RESTful
+Flask-HTTPAuth
+Flask-Cors
+mysql-connector-python
+setuptools
+waitress
