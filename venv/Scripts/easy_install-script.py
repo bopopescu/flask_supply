@@ -1,4 +1,4 @@
-#!C:\Users\alexi\OneDrive\Escritorio\Cisco\Programa\flask_supply\venv\Scripts\python.exe
+#!C:\Users\JesusBenjaminTorresA\Desktop\Cucei\cisco\supply\flask_supply\venv\Scripts\python.exe
 # EASY-INSTALL-ENTRY-SCRIPT: 'setuptools==40.8.0','console_scripts','easy_install'
 __requires__ = 'setuptools==40.8.0'
 import re

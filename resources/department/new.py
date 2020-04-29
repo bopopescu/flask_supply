@@ -20,8 +20,7 @@ class NewDepartmentAPI(ResourceBase):
             json_data['method'] = "post"
             print(json_data)
             bridge = DepartmentAdapter()
-            bridge.new(json_data)
-            items = True
-            return make_response(json.dumps(items, indent=4), 200)
+            return bridge.new(json_data)
+
         except Exception as e:
             return self.handle_error(e)

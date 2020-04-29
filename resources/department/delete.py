@@ -3,9 +3,8 @@ from flask import make_response
 from flask import request
 from common.auth import auth
 from resources.resource_base import ResourceBase
-from TechTeam.adapter.department import DepartmentAdapter
-
-from supply_core.use_cases.department import Department
+from TechTeam.adapter.request_update import RequestUpdateAdapter
+from supply_core.use_cases.request_update import RequestUpdate
 from flask import jsonify
 import json
 
@@ -18,7 +17,7 @@ class DeleteDepartmentAPI(ResourceBase):
 
     def get(self, id):
         try:
-            bridge = DepartmentAdapter()
+            bridge = RequestUpdateAdapter()
             # access = Department(bridge)
             return jsonify(bridge.delete(str(id)))
 

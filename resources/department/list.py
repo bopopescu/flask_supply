@@ -4,7 +4,6 @@ from flask import request
 from common.auth import auth
 from resources.resource_base import ResourceBase
 from TechTeam.adapter.department import DepartmentAdapter
-from supply_core.use_cases.department import Department
 from flask import jsonify
 import json
 
@@ -18,7 +17,6 @@ class ListDepartmentAPI(ResourceBase):
     def get(self):
         try:
             bridge = DepartmentAdapter()
-           # access = Department(bridge)
             return jsonify(bridge.list())
 
         except Exception as e:

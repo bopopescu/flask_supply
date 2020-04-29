@@ -9,21 +9,17 @@ from flask import jsonify
 import json
 
 
-class UpdateRequestAPI(ResourceBase):
+class TicketsCountAPI(ResourceBase):
     decorators = [auth.login_required]
 
     def _init_(self):
-        super(UpdateRequestAPI, self).init()
+        super(TicketsCountAPI, self).init()
 
-    def post(self, id):
+    def get(self):
         try:
-            data = request.data.decode()
-            json_data = json.loads(data)
-            json_data['method'] = "post"
-            print(json_data)
-            print(id)
             bridge = RequestAdapter()
-            return bridge.update(id, json_data)
+            # access = Department(bridge)
+            return bridge.list().size()
+
         except Exception as e:
             return self.handle_error(e)
-

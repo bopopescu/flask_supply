@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=C:\Users\alexi\OneDrive\Escritorio\Cisco\Programa\flask_supply\venv
+set VIRTUAL_ENV=C:\Users\JesusBenjaminTorresA\Desktop\Cucei\cisco\supply\flask_supply\venv
 
 if not defined PROMPT set PROMPT=$P$G
 
