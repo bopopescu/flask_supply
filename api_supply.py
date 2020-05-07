@@ -66,7 +66,8 @@ from resources.users.new import NewUserAPI
 from resources.users.update import UpdateUserAPI
 
 app = Flask(__name__, static_url_path="")
-CORS(app)
+#CORS(app)
+CORS(app, resources={r"/*": {"origins": "*"}})
 app.debug = False
 
 api = Api(app)
@@ -331,5 +332,4 @@ api.add_resource(
 )
 
 if __name__ == "__main__":
-    app.run(debug=False)
-    # serve(app, host='0.0.0.0', port=8080)
+    app.run(host= '0.0.0.0')
